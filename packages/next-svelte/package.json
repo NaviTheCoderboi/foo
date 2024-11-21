@@ -1,0 +1,35 @@
+{
+    "name": "@op-svelte/next-svelte",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "author": {
+        "name": "NaviTheCoderboi",
+        "url": "https://github.com/NaviTheCoderboi"
+    },
+    "license": "MIT",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts",
+            "svelte": "./dist/index.js",
+            "default": "./dist/index.js"
+        },
+        "./colors/*": "./dist/colors/*",
+        "./components/*": "./dist/components/*",
+        "./raw/*": "./src/*"
+    },
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "build": "libx build"
+    },
+    "dependencies": {
+        "bits-ui": "1.0.0-next.57",
+        "clsx": "^2.1.1",
+        "lucide-svelte": "^0.460.1",
+        "svelte-contextify": "^1.0.4",
+        "tailwind-merge": "^2.5.4",
+        "tailwind-variants": "^0.3.0",
+        "tailwindcss": "4.0.0-alpha.33"
+    }
+}

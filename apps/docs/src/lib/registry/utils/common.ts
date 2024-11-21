@@ -1,0 +1,24 @@
+import type { MaybeBoxOrGetter } from 'svelte-toolbelt';
+
+type AnyFn = (...args: any[]) => any;
+
+export const clamp = (value: number, min: number, max: number) => {
+    return Math.min(Math.max(value, min), max);
+};
+
+/**
+ * Chain multiple functions together
+ * @param cbs - Functions to chain
+ * @returns A function that calls each function in the order they were passed
+ */
+export const chain = <T extends AnyFn>(...cbs: T[]) => {
+    return ((...args: Parameters<T>) => {
+        for (const callback of cbs) {
+            if (typeof callback === 'function') {
+                callback(...args);
+            }
+        }
+    }) as T;
+};
+
+export type ReadableProp<T> = MaybeBoxOrGetter<T>;
