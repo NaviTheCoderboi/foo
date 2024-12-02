@@ -1,0 +1,105 @@
+@theme {
+    --opacity-disabled: 0.5;
+    --opacity-hover: 0.9;
+}
+
+@utility tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+}
+
+@utility ease-soft-spring {
+    transition-timing-function: cubic-bezier(0.155, 1.105, 0.295, 1.12);
+}
+
+@utility transition-background {
+    transition-property: background;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-colors-opacity {
+    transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke, opacity;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-width {
+    transition-property: width;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-height {
+    transition-property: height;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-size {
+    transition-property: width, height;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-left {
+    transition-property: left;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-transform-opacity {
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-transform-background {
+    transition-property: transform, background;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-transform-colors {
+    transition-property: transform, color, background, background-color,
+        border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@utility transition-transform-colors-opacity {
+    transition-property: transform, color, background, background-color,
+        border-color, text-decoration-color, fill, stroke, opacity;
+    transition-timing-function: ease;
+    transition-duration: 250ms;
+}
+
+@keyframes keyframes-animate-accordion-up {
+    from {
+        height: var(--bits-accordion-content-height);
+        opacity: 1;
+    }
+    to {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+@utility animate-accordion-up {
+    animation: keyframes-animate-accordion-up 200ms forwards ease-out;
+}
+
+@keyframes keyframes-animate-accordion-down {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: var(--bits-accordion-content-height);
+        opacity: 1;
+    }
+}
+
+@utility animate-accordion-down {
+    animation: keyframes-animate-accordion-down 200ms forwards ease-out;
+}
